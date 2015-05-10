@@ -1,40 +1,37 @@
 body::-webkit-scrollbar {
         width: 6px;
     }
- 
-    
-    /* Let's get this party started */
     ::-webkit-scrollbar {
         width: 3px;
     }
-
     /* Track */
     ::-webkit-scrollbar-track {
        background: #ccc; 
-/*        -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); 
-        -webkit-border-radius: 10px;
-        border-radius: 10px;*/
-    }
 
+    }
     /* Handle */
     ::-webkit-scrollbar-thumb {
-/*        -webkit-border-radius: 10px;
-        border-radius: 10px;*/
-        background:#337ab7; 
+        background:#037E8C; 
     }
     ::-webkit-scrollbar-thumb:window-inactive {
         background: #ddd; 
     }
 
-
-
-
-
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+#wrap{
+	min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+}
 body#log{
 	background-color: #29282D;
-}
-.container{
-	/*background-color: #29282D;*/
 }
 h1#title-log{
 	color: #fff;
@@ -67,24 +64,49 @@ div#title-hello{
 button#login{
 	margin-top: 21px;
 }
+button#button-primary{
+	margin-left: 10px;
+	background-color: #037E8C;
+	border: 1px solid transparent;
+	border-radius: 0;
+}
+button#button-primary:hover{
+	opacity: 0.9;
+}
+button#button-primary-s{
+	background-color: #037E8C;
+	border: 1px solid transparent;
+	border-radius: 0;
+}
+button#button-primary-s:hover{
+	opacity: 0.9;
+}
 div#add-comp{
 	margin-top: 22px;
-	/*width: 100%;*/
 	border:1px solid #eee;
-	/*background-color: #eee;*/
 }
 div#addform{
-	margin-top: -10px;
-	border: solid 1px #eee;
+	margin-top: 0px;
+	border: solid 1px #ccc;
+	margin-left: 20px;
+	width: 540px;
+	background-color: #eee;
 }
 form#add{
 	margin-top: 15px;
 }
 textarea#textarea{
 	max-width: 918px;
+	border-radius: 0;
 }
 textarea#textarea2{
 	max-width: 427px;
+	border-radius: 0;
+}
+#textarea:focus ,#textarea2:focus{
+	border-color: #2B96D9;
+	box-shadow: none;
+	border-radius: 0;
 }
 label#label-add{
 	text-align: left;
@@ -92,8 +114,6 @@ label#label-add{
 }
 div#retrieve{
 	margin-top: 20px;
-	/*border: solid 1px #eee;*/
-	/*background-color: #eee;*/
 	padding: 10px;
 	min-height: 400px;
 }
@@ -108,57 +128,50 @@ ul#data li{
 	padding: 5px;
 	border: solid 1px #ccc;
 	margin-bottom: 10px;
-	/*float: left;*/
 }
 ul#data li:hover{
 	background-color: #eee;
 }
 ul#data li img{
 	display: inline;
-	/*width: 100px;
-	height: 50px;*/
 }
 ul#data li h5{
 	display: inline;
 	margin-left: 30px;
-	/*float: left;*/
+	color: #666;
+	font-size: 16px;
 }
-
 form#button-edit{
 	float: right;margin-top: 8px;display: inline;
 }
-
-/*div#col-detail{
-	border: 1px solid #eee;
-}
-div#col-detail img{
-	width: 400px;
-	height: 300px;
-}*/
 button#logout{
 	margin-top: 23px;
+	border-radius: 0;
 }
 div#retrievelagi{
 	padding: 10px;
-
-	margin-top: 20px;
+	margin-top: 5px;
 	height: auto;
 }
 #title-list{
 	margin-top: 0px;
-	background-color: #29282D;
+	background-color: #022340;
 	color: #fff;
 	width: 560px;
 	margin-left: 0px;
-	height: 50px;
+	height: 42px;
 }
 #title-list h3{
 	margin-top: 12px;
 }
 #title-add{
-	background-color: #29282D;
+	background-color: #022340;
 	color: #fff;
 	padding: 10px;
+	margin-top: -43px;
+	margin-left: -16px;
+	width: 540px;
+	height: 42px;
 }
 #list{
 	border: solid 1px #eee;
@@ -191,20 +204,46 @@ div#title-select{
 	background-color: #29282D;
 	color: #fff;
 	height: 50px;
+	margin-top: -53px;
+	margin-left: -11px;
+	width: 540px;
+	background-color: #022340;
+	color: #fff;
+	height: 42px;
 }	
-div#title-select h3{
-	margin-top: 12px;
+div#title-select h4{
+	margin-left: 5px;
 }
 img#admin{
 	background-color: #fff;
 	border-radius: 100%;
 	border: solid 2px #fff;
 }
+/*footer*/
+/*footer{background-color:#1F81B8;color: #AEAEAC; }
+footer.spacer{padding: 3em 0;}*/
+/*footer*/
 footer{
 	background-color: #29282D;
 	color: #fff;
 	height: 50px;
 	border: none;
 	border-radius: 0px;
-	margin-top: 50px;
+	margin-top: 100px;
+	width: 100%;
+}
+footer.spacer {
+	padding: 3em 0;
+}
+#input-form{
+	border-radius: 0;
+}
+#input-form:focus{
+	border-color: #2B96D9;
+	box-shadow: none;
+	border-radius: 0;
+}
+p#content-detail{
+	margin-left: 5px;
+	color: #666;
 }

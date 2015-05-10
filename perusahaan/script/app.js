@@ -3,9 +3,10 @@ app.controller('dataController', function($scope, $http) {
 
   
     //update data
-    this.tab = 2;
     this.selectTab = function(setTab,setId,setNama,setDeskripsi,setAlamat,setContact,setEmail){
        this.tab = setTab;
+       $scope.updatesuccess = false;
+       $scope.addsuccess = false;
 
        $scope.idUp=setId;
        $scope.namaUp=setNama;
@@ -23,36 +24,33 @@ app.controller('dataController', function($scope, $http) {
         $http.post("module/updateData.php?id="+setId+"&"+"nama="+setNama+"&"+"deskripsi="+setDeskripsi+"&"+"alamat="+setAlamat+"&"+"telepon="+setContact+"&"+"email="+setEmail).success(function(data){
           $http.post('module/getData.php').success(function(data){
             $scope.records = data;
+            
           });
+          $scope.updatesuccess = true;
         });
-        //selectTab(2);
-
     };
 
 
 	// get data
     $http.get('module/getData.php').success(function(data){
-		$scope.records = data;
-	});
+  		$scope.records = data;
+  	});
 
-	//show form input data
-    $scope.myadd = true;
-    $scope.toggle = function() {
-        $scope.myadd = !$scope.myadd;
-    };
 
     //  add data
     $scope.addData = function (inputNama,inputDeskripsi,inputAlamat,inputTelepon,inputEmail) {
 	    $http.post("module/addData.php?nama="+inputNama+"&"+"deskripsi="+inputDeskripsi+"&"+"alamat="+inputAlamat+"&"+"telepon="+inputTelepon+"&"+"email="+inputEmail).success(function(data){
 	        $http.post('module/getData.php').success(function(data){
-				$scope.records = data;
-			});
+    				$scope.records = data;
+    			});
 	        $scope.inputNama = "";
-		    $scope.inputDeskripsi = "";
-		    $scope.inputAlamat = "";
-		    $scope.inputTelepon = "";
-		    $scope.inputEmail = "";
-	     });
+    		  $scope.inputDeskripsi = "";
+    		  $scope.inputAlamat = "";
+    		  $scope.inputTelepon = "";
+    		  $scope.inputEmail = "";
+
+          $scope.addsuccess = true;
+	    });
 
   	};
 
@@ -60,13 +58,9 @@ app.controller('dataController', function($scope, $http) {
   	$scope.deleteData = function (id) {
   		$http.post("module/deleteData.php?dataid="+id).success(function(data){
   			$http.post('module/getData.php').success(function(data){
-				$scope.records = data;
-			});
+  				$scope.records = data;
+  			});
   		});
   	};
-
-  	
-    
-
 
 });
